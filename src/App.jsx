@@ -6,7 +6,7 @@ import Skills from "./components/Skills";
 
 function App() {
   return (
-    <div className="App scroll-smooth mb-[80vh]">
+    <div className="App scroll-smooth mb-[100vh] max-w-[100vw]">
       <Hero />
       <About />
       <Projects />

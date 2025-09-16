@@ -421,7 +421,7 @@ const About = () => {
   });
 
   return (
-    <div className=" bg-white min-h-screen ">
+    <div className=" bg-white min-h-screen overflow-hidden">
       <div className="container w-[100vw]   m-auto flex flex-col   items-start justify-center text-black px-5  ">
         <h2 className="text-lg md:text-5xl rubik mr-10 mt-5">About</h2>
 

@@ -6,8 +6,8 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <section className="min-h-screen bg-gray-900 text-white flex items-center justify-center px-6 py-20 fixed inset-0 -z-10">
-      <div className="max-w-3xl w-full text-center h-[72%]">
+    <section className="min-h-screen bg-gray-900 text-white flex items-center justify-center px-6 py-5 fixed inset-0 -z-10">
+      <div className="max-w-3xl w-full text-center ">
         {/* Heading */}
         <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
         <p className="text-gray-400 mb-5">
@@ -54,7 +54,7 @@ export default function Contact() {
             href="mailto:yourname@email.com"
             className="text-indigo-400 hover:underline"
           >
-            yourname@email.com
+            ativorgodsway@icloud.com
           </a>
           <div className="flex justify-center gap-6 mt-4">
             <a
