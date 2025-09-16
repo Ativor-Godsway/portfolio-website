@@ -16,7 +16,7 @@ const LightHero = () => {
           ATIVOR GODSWAY
         </h1>
         <img
-          src="/black&white.png"
+          src="/profile.png"
           alt=""
           className="hidden md:block w-[120vw] md:w-[100vw] lg:w-[70vw] max-w-[850px] m-auto absolute  md:bottom-0 left-1/2 -translate-x-1/2 "
         />
@@ -32,7 +32,7 @@ const LightHero = () => {
             <p className="oswald self-end text-[15vw]">GODSWAY</p>
           </div>
           <img
-            src="/black&white.png"
+            src="/profile.png"
             alt=""
             className=" block md:hidden max-w-[500px] m-auto w-[100vw]"
           />
