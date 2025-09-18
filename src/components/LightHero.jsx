@@ -11,7 +11,7 @@ const LightHero = () => {
     <div className=" overflow-hidden w-full flex flex-col items-center sticky inset-0 bg-white text-black justify-center ">
       {" "}
       <div className="relative w-full h-screen flex flex-col items-center justify-center">
-        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] -z-40"></div>
+        <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] -z-40"></div>
         <h1 className=" hidden md:block text-[14vw] oswald  text-center absolute top-4 min-w-[100vw] whitespace-nowrap  ">
           ATIVOR GODSWAY
         </h1>
@@ -45,11 +45,11 @@ const LightHero = () => {
             </p>
           </div>
           <div className="bg-black text-white md:bg-transparent md:text-black flex rounded-b-[50px] mx-2 md:absolute top-[50%] md:right-10  md:w-[30vw] text-center md:text-left  flex-col items-center p-3">
-            <p className="orbitron  md:text-[1.4rem] ">
-              I craft sleek, responsive websites that blend design with
-              performance. Turning bold ideas into digital experiences that
-              truly stand out.
-            </p>
+            <h2 className="orbitron  md:text-[1.4rem] ">
+              A full stack web developer who crafts sleek, responsive websites
+              that blend design with performance. Turning bold ideas into
+              digital experiences that truly stand out.
+            </h2>
             <a href="#contact">
               <button className="btn orbitron px-10 bg-white transition-all duration-200 mt-5 text-black hover:scale-[1.1] md:bg-black md:text-white rounded-full">
                 GET IN TOUCH

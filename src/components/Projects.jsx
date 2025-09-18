@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { IoLogoReact } from "react-icons/io5";
-import { FaHtml5 } from "react-icons/fa";
+
 import { SiTailwindcss } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
@@ -37,8 +37,8 @@ const projects = [
     id: 3,
     title: "Photographer's Portfolio Website",
     description:
-      "A fully responsive online store featuring dynamic product listings, shopping cart, and a secure checkout system built with React and Tailwind CSS. Includes an intuitive admin panel for monitoring orders and adding products seamlessly.",
-    techStack: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
+      "A portfolio website designed to help photographers showcase their work.",
+    techStack: ["React", "Tailwind CSS"],
     image: "/ecom-p1.png",
     link: "#",
     bgColor: "#f0d3e4",
@@ -46,9 +46,9 @@ const projects = [
   },
   {
     id: 4,
-    title: "E-commerce website",
+    title: "Spotify Clone",
     description:
-      "A fully responsive online store featuring dynamic product listings, shopping cart, and a secure checkout system built with React and Tailwind CSS. Includes an intuitive admin panel for monitoring orders and adding products seamlessly.",
+      "A music streaming platform that allows users to listen to their favorite songs, create playlists, and discover new music. Built with React and Tailwind CSS, this project showcases my ability to create responsive and user-friendly web applications.",
     techStack: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
     image: "/ecom-p1.png",
     link: "#",
@@ -57,10 +57,10 @@ const projects = [
   },
   {
     id: 5,
-    title: "E-commerce website",
+    title: "Bank App Landing Page",
     description:
-      "A fully responsive online store featuring dynamic product listings, shopping cart, and a secure checkout system built with React and Tailwind CSS. Includes an intuitive admin panel for monitoring orders and adding products seamlessly.",
-    techStack: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
+      "A landing page for a banking application that showcases its features and benefits. Built with React and Tailwind CSS, this project emphasizes clean design and user experience.",
+    techStack: ["React", "Tailwind CSS"],
     image: "/ecom-p1.png",
     link: "#",
     bgColor: "#f0e6d2",
@@ -69,11 +69,13 @@ const projects = [
 ];
 
 const Projects = () => {
-  useEffect(() => {
-    let context = gsap.context(() => {
+  const wrapperRef = useRef(null);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
       let tl = gsap.timeline({
         scrollTrigger: {
-          trigger: ".wrapper",
+          trigger: wrapperRef.current,
           pin: true,
           start: "top 2%",
           end: "bottom top",
@@ -85,11 +87,11 @@ const Projects = () => {
       tl.to(".item", {
         height: 10,
         duration: 1,
-        stagger: 0.9,
+        stagger: 1.2,
       });
-    });
-    return () => context.revert();
-  });
+    }, wrapperRef);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div className=" bg-black   text-white  overflow-hidden">
@@ -97,9 +99,13 @@ const Projects = () => {
         <h2 className="text-lg md:text-5xl rubik ml-10 pt-5">Projects</h2>
       </div>
 
-      <div className="wrapper  flex items-center flex-col max-h-[100vh]    w-full">
-        {projects.map((project) => (
+      <div
+        ref={wrapperRef}
+        className="  flex items-center flex-col max-h-[100vh]    w-full"
+      >
+        {projects.map((project, index) => (
           <div
+            key={index}
             className={`item w-[95%] md:w-[90%] ${
               project.id === 5 ? "min-h-[90vh]" : "h-[90vh]"
             } md:h-[80vh] px-2  md:px-10  text-black relative flex flex-col `}
@@ -162,10 +168,7 @@ const Projects = () => {
               {/* FIGURE */}
               <figure className=" md:h-full mt-5 md:mt-10 w-full m-auto md:w-[60%] relative  ">
                 <figure className="hover-galler">
-                  <img src={project.image} className="" />
-                  {/* <img src="/ecom2.png" />
-                <img src="/ecom3.png" />
-                <img src="/ecom4.png" /> */}
+                  <img src={project.image} className="" loading="lazy" />
                 </figure>
               </figure>
             </div>
