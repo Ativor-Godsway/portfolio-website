@@ -17,8 +17,8 @@ const projects = [
     description:
       "A fully responsive online store featuring dynamic product listings, shopping cart, and a secure checkout system built with React and Tailwind CSS. Includes an intuitive admin panel for monitoring orders and adding products seamlessly.",
     techStack: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
-    image: "/ecom-p1.png",
-    link: "#",
+    image: "/ecommerce.png",
+    link: "https://world-of-vintages-client.vercel.app",
     bgColor: "#f0e6d2",
     accentColor: "#dbcfbc",
   },
@@ -28,30 +28,20 @@ const projects = [
     description:
       "A responsive admin dashboard designed for managing an e-commerce platform. Features include real-time order tracking, product management, and sales insights. Built with React and Tailwind CSS for a modern, intuitive user experience.",
     techStack: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
-    image: "/ecom-p1.png",
-    link: "#",
+    image: "/admin.png",
+    link: "https://world-of-vintages-client.vercel.app/admin",
     bgColor: "#d3e4f0",
     accentColor: "#b9ccda",
   },
-  {
-    id: 3,
-    title: "Photographer's Portfolio Website",
-    description:
-      "A portfolio website designed to help photographers showcase their work.",
-    techStack: ["React", "Tailwind CSS"],
-    image: "/ecom-p1.png",
-    link: "#",
-    bgColor: "#f0d3e4",
-    accentColor: "#d6b2c7",
-  },
+
   {
     id: 4,
     title: "Spotify Clone",
     description:
       "A music streaming platform that allows users to listen to their favorite songs, create playlists, and discover new music. Built with React and Tailwind CSS, this project showcases my ability to create responsive and user-friendly web applications.",
     techStack: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
-    image: "/ecom-p1.png",
-    link: "#",
+    image: "/spotify.png",
+    link: "https://spotify-livid-tau.vercel.app",
     bgColor: "#e4f0d3",
     accentColor: "#bbc7a9",
   },
@@ -61,8 +51,8 @@ const projects = [
     description:
       "A landing page for a banking application that showcases its features and benefits. Built with React and Tailwind CSS, this project emphasizes clean design and user experience.",
     techStack: ["React", "Tailwind CSS"],
-    image: "/ecom-p1.png",
-    link: "#",
+    image: "/bank.png",
+    link: "https://bank-landing-page-beige.vercel.app",
     bgColor: "#f0e6d2",
     accentColor: "#d3c8b3",
   },
@@ -94,27 +84,27 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className=" bg-black   text-white  overflow-hidden">
+    <div className=" bg-black   text-white  ">
       <div className="h-[20vh]">
         <h2 className="text-lg md:text-5xl rubik ml-10 pt-5">Projects</h2>
       </div>
 
       <div
         ref={wrapperRef}
-        className="  flex items-center flex-col max-h-[100vh]    w-full"
+        className="  flex items-center flex-col h-fit max-h-[100vh]   w-full"
       >
         {projects.map((project, index) => (
           <div
             key={index}
             className={`item w-[95%] md:w-[90%] ${
               project.id === 5 ? "min-h-[90vh]" : "h-[90vh]"
-            } md:h-[80vh] px-2  md:px-10  text-black relative flex flex-col `}
+            }  px-2  md:px-10  text-black relative `}
             style={{ backgroundColor: project.bgColor }}
           >
             <h2 className="text-7xl font-serif absolute top-0   ">
               0{project.id}
             </h2>
-            <div className=" flex flex-col-reverse md:flex-row justify-between mb-5  ">
+            <div className="w-full h-full flex flex-col-reverse md:flex-row justify-between mb-5 relative ">
               {/* TEXT AREA */}
               <div
                 className="mt-[-50px] md:mt-20 md:w-[40%] h-fit  shadow-2xl rounded-3xl px-5 flex flex-col py-1 md:py-5 md:pt-10"
@@ -160,13 +150,15 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-                <button className="mt-3 md:mt-7 btn border-none  transition-all duration-300 bg-[#494339]  hover:scale-[1.1] text-[#ddd4c5] self-center rounded-full  shadow-lg shadow-[#4f4f4fa9] ">
-                  Visit Site
-                </button>
+                <a href={project.link} target="_blank" className="self-center">
+                  <button className="mt-3 md:mt-7 btn border-none  transition-all duration-300 bg-[#494339]  hover:scale-[1.1] text-[#ddd4c5]  rounded-full  shadow-lg shadow-[#4f4f4fa9] ">
+                    Visit Site
+                  </button>
+                </a>
               </div>
 
               {/* FIGURE */}
-              <figure className=" md:h-full mt-5 md:mt-10 w-full m-auto md:w-[60%] relative  ">
+              <figure className="  w-full m-auto md:w-[60%] md:mt-40  ">
                 <figure className="hover-galler">
                   <img src={project.image} className="" loading="lazy" />
                 </figure>
