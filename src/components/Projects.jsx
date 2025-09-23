@@ -35,7 +35,7 @@ const projects = [
   },
 
   {
-    id: 4,
+    id: 3,
     title: "Spotify Clone",
     description:
       "A music streaming platform that allows users to listen to their favorite songs, create playlists, and discover new music. Built with React and Tailwind CSS, this project showcases my ability to create responsive and user-friendly web applications.",
@@ -46,7 +46,7 @@ const projects = [
     accentColor: "#bbc7a9",
   },
   {
-    id: 5,
+    id: 4,
     title: "Bank App Landing Page",
     description:
       "A landing page for a banking application that showcases its features and benefits. Built with React and Tailwind CSS, this project emphasizes clean design and user experience.",
