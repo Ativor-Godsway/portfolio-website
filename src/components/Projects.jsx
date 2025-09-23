@@ -97,7 +97,7 @@ const Projects = () => {
           <div
             key={index}
             className={`item w-[95%] md:w-[90%] ${
-              project.id === 5 ? "min-h-[90vh]" : "h-[90vh]"
+              project.id === 4 ? "min-h-[90vh]" : "h-[90vh]"
             }  px-2  md:px-10  text-black relative `}
             style={{ backgroundColor: project.bgColor }}
           >
